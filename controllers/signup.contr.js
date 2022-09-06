@@ -49,7 +49,7 @@ const login = async (req, res) => {
           },
           process.env.SecretPassword
         );
-        res.cookie("student", token{ HttpOnly: true, secure: true });
+        res.cookie("student", token ,{ HttpOnly: true, secure: true });
         res.redirect("/");
       } else {
         req.flash("loginError", "cardNumber or phoneNumber is not correct");
