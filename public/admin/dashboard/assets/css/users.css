@@ -1,0 +1,61 @@
+.users{
+    position: relative;
+    margin-top: auto;
+    width: 150%;
+    height: auto;
+    overflow: auto;
+    padding: 20px;
+    display: block;
+    top: 100%;
+
+}
+.users .customers {
+    position: relative;
+    display: block;
+    height: auto;
+    background: var(--white);
+    padding: 30px;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+.users .cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2 {
+    font-weight: 600;
+    color: var(--main);
+}
+.users table {
+    width: 100%;
+    height: auto;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.users table thead td {
+    font-weight: 600;
+}
+.users .customers table tr {
+    color: var(--black1);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+.users .customers table tr:last-child {
+    border-bottom: none;
+}
+.users .customers table tbody tr:hover {
+    background: var(--main);
+    color: var(--white);
+}
+.users .customers table tr td {
+    padding: 10px;
+}
+.users .customers table tr td:last-child {
+    text-align: end;
+}
+.users .customers table tr td:nth-child(2) {
+    text-align: end;
+}
+.users .customers table tr td:nth-child(3) {
+    text-align: center;
+}

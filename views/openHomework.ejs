@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="/img/logo (2).png" />
+
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <title>The Legend Platform</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../homework/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="../../homework/assets/css/fontawesome.css" />
+    <link rel="stylesheet" href="../../homework/assets/css/templatemo-seo-dream.css" />
+    <link rel="stylesheet" href="../../homework/assets/css/animated.css" />
+    <link rel="stylesheet" href="../../homework/assets/css/owl.css" />
+  </head>
+
+  <body>
+    <main>
+      <!-- ***** Preloader Start ***** -->
+
+      <!-- ***** Preloader End ***** -->
+
+      <!-- ***** Header Area Start ***** -->
+      <header id="header">
+        <nav>
+          <div class="container">
+            <div class="logo">
+              <a href="/">
+                <img src="/img/logo (2).png" alt="" />
+              </a>
+            </div>
+            <div>
+              <input type="checkbox" class="checkbox" id="chk" />
+              <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+              </label>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+      <!-- ***** Header Area End ***** -->
+
+      <div id="services" class="our-services section">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+              <div
+                class="section-heading wow bounceIn"
+                data-wow-duration="1s"
+                data-wow-delay="0.2s"
+              >
+                <h6>Your Plan</h6>
+                <h2>Homework</h2>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-fluid">
+          <div class="row">
+            
+<% let lox =""; let lo =""; let loy ="" %> 
+<%  for (element of data) {%>
+  <%lox = checkah.find((value) => {%>
+    <%lo = element.units.find((val, index) => {%>
+      <%return value.quiz.toString() == val.quizId%>
+   <% });%>
+   <%loy = element.units.find((val, index) => {%>
+    <%return val.homeId != undefined %>
+ <% });%>
+ <% console.log("-----------------") %> 
+   <% console.log(lo+ " d "+loy) %> 
+   <% if (lo != undefined && loy != undefined ){ %> 
+    <div class="col-lg-4">
+      <div
+        class="service-item wow bounceInUp"
+        data-wow-duration="1s"
+        data-wow-delay="0.3s"
+      >
+        <div class="row">
+          <div class="col-lg-4">
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <br>
+            <% console.log('fffffffffffff') %> 
+            <% let comp = deg.find((val)=>{return val.quiz.toString() == lo['homeId']._id}) || "" %> 
+            <% console.log(comp +"df") %> 
+           <% if(comp){%>
+              <a href="/showAnswerHomework/<%=lo['homeId']._id %> " class="active"
+              >show answer</a
+            >
+            <%}else{%>
+              <a href="/homework/<%=lo['homeId']._id%>" class="active"
+              >go to homework</a
+            >
+            <%}%>
+         
+          </div>
+
+          <div class="col-lg-8">
+            <div class="right-content">
+              <h4><%=lo['homeId'].nameQuiz %> </h4>
+              <p><%= comp.totalDegree  %>/<%= 40 %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  <%}%>
+ <% });%>
+<%} %>             
+          
+
+            </div>
+          </div>
+        </div>
+      </div>
+      <br />
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="grid-4"></div>
+
+        <div class="bottom-footer">
+          <div class="copyright">
+            <p class="text">
+              © Copyright 2022. All Rights Reserved.
+
+              <br />Developed By:
+              <a
+                rel="nofollow"
+                href="https://www.facebook.com/profile.php?id=100011225383830"
+                >Abdelrahman</a
+              >
+              &
+              <a rel="nofollow" href="https://www.facebook.com/ahmed11mahomed">
+                Kotb</a
+              >
+            </p>
+          </div>
+
+          <div class="followme-wrap">
+            <div class="followme">
+              <h3>Follow us</h3>
+              <span class="footer-line"></span>
+              <div class="social-media">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063696370542&_rdc=1&_rdr"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://t.me/mrtaherthelegendofenglish">
+                  <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCNltASDBUDxqrCpfsMBZGRw"
+                >
+                  <i class="fa fa-youtube"></i>
+                </a>
+                <a href="whatsapp://send?text=Hello!&phone=+201013319334">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="back-btn-wrap">
+              <a href="#" class="back-btn">
+                <i class="fas fa-chevron-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../../homework/vendor/jquery/jquery.min.js"></script>
+    <script src="../../homework/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../../homework/assets/js/owl-carousel.js"></script>
+    <script src="../../homework/assets/js/animation.js"></script>
+    <script src="../../homework/assets/js/imagesloaded.js"></script>
+    <script src="../../homework/assets/js/custom.js"></script>
+    <script
+      src="https://kit.fontawesome.com/f05b3a1e7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  </body>
+</html>

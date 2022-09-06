@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="icon" type="image/png" href="../units/img/logo (2).png" />
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Legend Platform</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="../../../units/style.css" />
+  </head>
+  <body>
+    <main>
+      <header id="header">
+        <div class="overlay overlay-lg">
+          <img src="../../../img/shapes/square.png" class="shape square" alt="" />
+          <img src="../../../img/shapes/circle.png" class="shape circle" alt="" />
+          <img
+            src="../../../img/shapes/half-circle.png"
+            class="shape half-circle1"
+            alt=""
+          />
+          <img
+            src="../../../img/shapes/half-circle.png"
+            class="shape half-circle2"
+            alt=""
+          />
+          <img src="../../../units/img\shapes\x.png" class="shape xshape" alt="" />
+          <img src="../../../units/img\shapes\wave.png" class="shape wave wave1" alt="" />
+          <img src="../../../units/img\shapes\wave.png" class="shape wave wave2" alt="" />
+          <img src="../../../units/img\shapes\triangle.png" class="shape triangle" alt="" />
+          <img src="../../../units/img\shapes\points1.png" class="points points1" alt="" />
+        </div>
+
+        <nav>
+          <div class="container">
+            <div class="logo">
+              <a href="/">
+                <img src="../../../units/img\logo (2).png" alt="" />
+              </a>
+            </div>
+            <div>
+              <input type="checkbox" class="checkbox" id="chk" />
+              <label class="label" for="chk">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+                <div class="ball"></div>
+              </label>
+            </div>
+          </div>
+        </nav>
+        <% if(data){%>
+          <div class="column-2 image">
+            <iframe
+            width="800"
+            height="500"
+            src=<%=data.lesson%>
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen=""
+          ></iframe>
+          </div>
+        </header>
+        <br />
+  
+        <h2>
+          <p class="exercise">
+            1.Download 
+  
+            <a
+              rel="nofollow"
+              <% let pdf = ""%>
+              <%pdf = data['pdf'].split('\\')[1] || data['pdf'].split('/')[1] %>
+              href="/<%=pdf%>"
+              >Pdf</a
+            >
+          <p class="exercise">
+            2.Solve 
+  
+            <a
+              href="/quiz/<%=url%>">Quiz</a
+            >
+            <p class="exercise">
+              2.Solve
+            <a rel="nofollow" href="/openHomeWork">
+              Homework </a
+            >
+          </p>
+          </p>
+          </p>
+        </h2>
+        <br />
+       <% } %> 
+       
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="grid-4"></div>
+
+        <div class="bottom-footer">
+          <div class="copyright">
+            <p class="text">
+              © Copyright 2022. All Rights Reserved.
+
+              <br />Developed By:
+              <a
+                rel="nofollow"
+                href="https://www.facebook.com/profile.php?id=100011225383830"
+                >Abdelrahman</a
+              >
+              &
+              <a rel="nofollow" href="https://www.facebook.com/ahmed11mahomed">
+                Kotb</a
+              >
+            </p>
+          </div>
+
+          <div class="followme-wrap">
+            <div class="followme">
+              <h3>Follow us</h3>
+              <span class="footer-line"></span>
+              <div class="social-media">
+                <a
+                  href="https://www.facebook.com/profile.php?id=100063696370542&_rdc=1&_rdr"
+                >
+                  <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://t.me/mrtaherthelegendofenglish">
+                  <i class="fa-brands fa-telegram"></i>
+                </a>
+                <a
+                  href="https://www.youtube.com/channel/UCNltASDBUDxqrCpfsMBZGRw"
+                >
+                  <i class="fa fa-youtube"></i>
+                </a>
+                <a href="whatsapp://send?text=Hello!&phone=+201013319334">
+                  <i class="fa fa-whatsapp"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="back-btn-wrap">
+              <a href="#" class="back-btn">
+                <i class="fas fa-chevron-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/f05b3a1e7e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script src="../../../units/app.js"></script>
+  </body>
+</html>

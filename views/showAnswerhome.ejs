@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>quiz in Javascript</title>
+    <link rel="stylesheet" href="../../show answer/style.css" />
+  </head>
+  <body>
+    <div class="quizContainer container-fluid well well-lg">
+      <div id="quiz1" class="text-center">
+        <h2
+          style="color: #d14040; position: center; left: 80%; top: 0%"
+          align="Center"
+        >
+          Model Answers
+          <br />
+        </h2>
+        
+      </div>
+      <% for(let i =0;i< data['homeQue'].length ; i++){ %> 
+      <div class="quiz-container">
+        <div class="question-number">
+          <h3>
+            <%=(i+1) %>.<%=data['homeQue'][i]['question'] %>  <span class="question-num-value"></span>
+          </h3>
+        </div>
+        <br />
+        <br />
+        <br />
+        <section>
+          <div class="options">
+            <%for(j of data['homeQue'][i].answer[0] ) {%> 
+            <div class="options" ><%=j %> </div>
+            <% } %> 
+          </div>
+        </section>
+        <div class="answer">
+          the correct answer is <span><b><%=data['homeQue'][i]['correctAnswer'] %></b></span>
+        </div>
+        
+      </div>
+      <% } %> 
+     
+      <script src="../../show answer/script.js"></script>
+    </div>
+  </body>
+</html>

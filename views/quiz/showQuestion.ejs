@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>question</title>
+  </head>
+  <body>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../../Quiz-App-JavaScript-main/css/style.css" />
+    <!-- FontAweome CDN Link for Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <!-- Quiz Box -->
+    <% if(s == true){ %> 
+    <div class="quiz_box activeQuiz">
+      <header>
+        <div class="title">Quiz</div>
+        <div class="timer">
+          <div class="time_left_txt">Time Left</div>
+          <div class="timer_sec"  id="d">
+            
+             </div>
+        </div>
+       
+      </header>
+      <script>
+       let dx =  Number("<%=d%>")
+       let min = 0;
+       let sec = 0;
+     let timer=  setInterval(()=>{
+         dx--;
+         let hour = Math.floor((dx)/60/60)
+        min= Math.floor(((dx)/60)%60);
+        sec = Math.floor((((dx)%60))); 
+         document.querySelector('#d').innerHTML =(hour <10?"0"+hour:hour)+":"+ (min <10?"0"+min:min) +":"+(sec <10?"0"+sec:sec)
+  if(dx < 1){
+    hour = 0 ;
+    min = 0 ;
+    sec = 0;
+    clearInterval(timer)
+  }
+       },1000)
+      </script>
+      <section>
+        <div class="que_text"><span><%=quiz['quizId']['quiz'][index]['question'] %></span></div>
+        <div class="option_list">
+          <% for(i of quiz['quizId']['quiz'][index]['answer'][0]){ %> 
+           <form method="post">
+            <% if(i !="") {%> 
+            <div class="option " >
+             
+              <span><%=i %></span>
+              <input
+                type="radio"
+                name="answer"
+                value="<%=i%>" 
+              />
+             
+              </div>
+              <% } %> 
+              <% } %>
+
+         
+        </div>
+      </section>
+
+      <!-- footer of Quiz Box -->
+      <footer>
+        <div class="total_que">
+          <span
+            ><p><%=index %> </p>
+            of
+            <p><%=quiz['quizId']['quiz'].length  %> </p>
+            Questions</span
+          >
+        </div>
+        <% if(index == quiz['quizId']['quiz'].length -1) {%> 
+          <button class="next_btn show">Finish</button>
+          <% }else{ %> 
+            <button class="next_btn show">Next</button>
+          <% } %> 
+        </form>
+      </footer>
+    </div>
+    <% } else { %>
+      <h1>no quiz</h1>
+  <% } %>
+
+    <!-- Code injected-->
+  </body>
+</html>
